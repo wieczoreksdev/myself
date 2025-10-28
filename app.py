@@ -45,7 +45,7 @@ def start_chat():
             st.session_state.setup_complete = True
 
 if not st.session_state.setup_complete:
-  st.subheader("Before we start out conversation, please fill out some info about yourself:", divider ='rainbow')
+  st.subheader("Before we start, please fill out below form", divider ='rainbow')
   if "first_name" not in st.session_state:
     st.session_state.first_name = ""
   # if "last_name" not in st.session_state:
@@ -88,7 +88,7 @@ if st.session_state.setup_complete and not st.session_state.chat_complete and no
     But please note that our conversation is limited to 5 exchanges.
     """, icon="💡"
   )
-
+  
   client = OpenAI(api_key=st.secrets["OPEN_API_KEY"])
 
   if "open_model" not in st.session_state:
